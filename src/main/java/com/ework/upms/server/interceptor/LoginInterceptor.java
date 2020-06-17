@@ -10,7 +10,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     private String test = "jingdong";
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        System.out.println("this is preHandle");
+        System.out.println("preHandle");
         return true;
     }
 }
