@@ -9,11 +9,11 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <bean id="test"
-          class="com.ework.upms.server.test">
+          class="com.ework.upms.server.TestObj">
     </bean>
 
     <bean id="test1"
-          class="com.ework.upms.server.test">
+          class="com.ework.upms.server.TestObj">
     </bean>
 
 
