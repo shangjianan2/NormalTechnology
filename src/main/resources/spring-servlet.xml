@@ -16,6 +16,15 @@
           class="com.ework.upms.server.TestObj">
     </bean>
 
+    <bean id="test_constructor"
+          class="com.ework.upms.server.TestObj">
+        <constructor-arg index="0">
+            <value>233</value>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <value>asdf</value>
+        </constructor-arg>
+    </bean>
 
     <mvc:interceptors>
         <mvc:interceptor>

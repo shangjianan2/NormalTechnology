@@ -13,4 +13,11 @@ public class BeanFactoryTest {
         TestObj test = (TestObj)bf.getBean("test");
         test.display();
     }
+
+    @Test
+    public void testSimpleLoad_constructor() {
+        BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-servlet.xml"));
+        TestObj test = (TestObj)bf.getBean("test_constructor");
+        test.display();
+    }
 }
