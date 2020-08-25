@@ -4,6 +4,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.testng.annotations.Test;
+import test.customtag.User;
 
 @SuppressWarnings("deprecation")
 public class BeanFactoryTest {
@@ -19,5 +20,13 @@ public class BeanFactoryTest {
         BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-servlet2.xml"));
         TestObj test = (TestObj)bf.getBean("test_constructor");
         test.display();
+    }
+
+    @Test
+    public void testCustomTag() {
+        BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-servlet2.xml"));
+        User user = (User)bf.getBean("hhh");
+        System.out.printf("userName:%s\r\n", user.getUserName());
+        System.out.printf("email:%s\r\n", user.getEmail());
     }
 }
