@@ -9,14 +9,14 @@ import org.testng.annotations.Test;
 public class BeanFactoryTest {
     @Test
     public void testSimpleLoad() {
-        BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-servlet.xml"));
+        BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-servlet2.xml"));
         TestObj test = (TestObj)bf.getBean("test");
         test.display();
     }
 
     @Test
     public void testSimpleLoad_constructor() {
-        BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-servlet.xml"));
+        BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-servlet2.xml"));
         TestObj test = (TestObj)bf.getBean("test_constructor");
         test.display();
     }
