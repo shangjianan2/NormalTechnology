@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:myname="http://www.lexueba.com/schema/user"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.lexueba.com/schema/user
+http://www.lexueba.com/schema/user.xsd">
+
+    <bean name="circleA" class="com.ework.upms.server.circle.CircleA">
+        <property name="circleB" ref="circleB"/>
+        <property name="circleC" ref="circleC"/>
+    </bean>
+    <bean name="circleB" class="com.ework.upms.server.circle.CircleB">
+        <property name="circleA" ref="circleA"/>
+    </bean>
+    <bean name="circleC" class="com.ework.upms.server.circle.CircleC">
+
+    </bean>
+
+</beans>
