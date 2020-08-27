@@ -14,6 +14,9 @@ http://www.lexueba.com/schema/user.xsd">
     <bean name="circleA" class="com.ework.upms.server.circle.CircleA">
         <property name="circleB" ref="circleB"/>
         <property name="circleC" ref="circleC"/>
+        <property name="id">
+            <value>233</value>
+        </property>
     </bean>
     <bean name="circleB" class="com.ework.upms.server.circle.CircleB">
         <property name="circleA" ref="circleA"/>

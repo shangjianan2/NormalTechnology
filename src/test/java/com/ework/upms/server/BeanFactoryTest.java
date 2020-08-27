@@ -39,6 +39,7 @@ public class BeanFactoryTest {
         circleA.display();
         circleA.getCircleB().display();
         circleA.getCircleC().display();
+        System.out.println(circleA);
     }
 
     @Test
