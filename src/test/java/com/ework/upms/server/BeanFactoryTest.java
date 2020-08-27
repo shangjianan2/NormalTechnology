@@ -1,6 +1,7 @@
 package com.ework.upms.server;
 
 import com.ework.upms.server.circle.CircleA;
+import com.ework.upms.server.constructor.ccc;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -38,5 +39,15 @@ public class BeanFactoryTest {
         circleA.display();
         circleA.getCircleB().display();
         circleA.getCircleC().display();
+    }
+
+    @Test
+    public void testConstructor() {
+        BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-servlet-constructor.xml"));
+        ccc ccc = (ccc)bf.getBean("ccc");
+        System.out.println(ccc);
+
+        ccc ccc1 = (ccc)bf.getBean("ccc1");
+        System.out.println(ccc1);
     }
 }

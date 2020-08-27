@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:myname="http://www.lexueba.com/schema/user"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.lexueba.com/schema/user
+http://www.lexueba.com/schema/user.xsd">
+
+    <bean name="ccc" class="com.ework.upms.server.constructor.ccc">
+        <constructor-arg index="0">
+            <value>233</value>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <value>asdf</value>
+        </constructor-arg>
+    </bean>
+
+    <bean name="ccc1" class="com.ework.upms.server.constructor.ccc">
+    </bean>
+
+</beans>
