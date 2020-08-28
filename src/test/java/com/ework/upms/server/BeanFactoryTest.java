@@ -2,8 +2,10 @@ package com.ework.upms.server;
 
 import com.ework.upms.server.circle.CircleA;
 import com.ework.upms.server.constructor.ccc;
+import com.ework.upms.server.post.processors.TestProcessor;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.testng.annotations.Test;
 import test.customtag.User;
@@ -50,5 +52,12 @@ public class BeanFactoryTest {
 
         ccc ccc1 = (ccc)bf.getBean("ccc1");
         System.out.println(ccc1);
+    }
+
+    @Test
+    public void testPostProcessors() {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-servlet-processor.xml");
+        TestProcessor testProcessor = (TestProcessor)context.getBean("testProcessor");
+        testProcessor.getMessage();
     }
 }
