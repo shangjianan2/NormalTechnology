@@ -2,13 +2,17 @@ package com.ework.upms.server;
 
 import com.ework.upms.server.circle.CircleA;
 import com.ework.upms.server.constructor.ccc;
+import com.ework.upms.server.i18n.I18nTest;
 import com.ework.upms.server.post.processors.TestProcessor;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import test.customtag.User;
+
+import java.util.Locale;
 
 @SuppressWarnings("deprecation")
 public class BeanFactoryTest {
@@ -59,5 +63,21 @@ public class BeanFactoryTest {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-servlet-processor.xml");
         TestProcessor testProcessor = (TestProcessor)context.getBean("testProcessor");
         testProcessor.getMessage();
+    }
+
+    @DataProvider(name = "testI18nData")
+    public Object[][] testI18nData() {
+        return new Object[][] {
+                {Locale.US},
+                {new Locale("in", "ID")},
+                {Locale.CHINA}
+        };
+    }
+    @Test(dataProvider = "testI18nData")
+    public void testI18n(Locale locale) {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-servlet-i18n.xml");
+        I18nTest i18nTest = (I18nTest)context.getBean("i18nTest");
+        String s = i18nTest.getMessage("empty.request", null, locale);
+        System.out.println(s);
     }
 }
