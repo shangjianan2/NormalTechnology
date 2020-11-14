@@ -19,7 +19,7 @@ public class AgentRedisUtils implements InitializingBean {
 
     public void afterPropertiesSet() throws Exception {
         logger.info("redis ip: {}", jedisIp);
-        Jedis jedis = new Jedis(jedisIp);
+        this.jedis = new Jedis(jedisIp);
         logger.info("连接成功");
         logger.info("服务正在运行: "+jedis.ping());
     }
