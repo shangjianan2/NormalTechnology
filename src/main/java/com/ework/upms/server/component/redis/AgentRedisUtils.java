@@ -23,4 +23,8 @@ public class AgentRedisUtils implements InitializingBean {
         logger.info("连接成功");
         logger.info("服务正在运行: "+jedis.ping());
     }
+
+    public String getValue(String key) {
+        return this.jedis.get(key);
+    }
 }
