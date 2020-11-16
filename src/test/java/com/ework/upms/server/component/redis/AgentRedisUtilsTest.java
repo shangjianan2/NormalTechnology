@@ -28,13 +28,13 @@ public class AgentRedisUtilsTest extends AbstractTestNGSpringContextTests {
 
         Thread thread1 = new Thread(new Runnable() {
             public void run() {
-                task("thread1", 1000L, "thread1");
+                task("thread", 1000L, "thread1");
             }
         });
 
         Thread thread2 = new Thread(new Runnable() {
             public void run() {
-                task("thread2", 2000L, "thread2");
+                task("thread", 2000L, "thread2");
             }
         });
 
@@ -61,13 +61,13 @@ public class AgentRedisUtilsTest extends AbstractTestNGSpringContextTests {
 
         Thread thread1 = new Thread(new Runnable() {
             public void run() {
-                task("thread", 1000L, "thread1");
+                task("thread1", 1000L, "thread1");
             }
         });
 
         Thread thread2 = new Thread(new Runnable() {
             public void run() {
-                task("thread", 2000L, "thread2");
+                task("thread2", 2000L, "thread2");
             }
         });
 
