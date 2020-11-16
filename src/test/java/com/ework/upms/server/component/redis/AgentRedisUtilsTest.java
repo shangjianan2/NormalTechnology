@@ -26,17 +26,9 @@ public class AgentRedisUtilsTest extends AbstractTestNGSpringContextTests {
     public void testSameKey() {
         Assert.notNull(this.agentRedisUtils, "redisUtils 为空");
 
-        Thread thread1 = new Thread(new Runnable() {
-            public void run() {
-                task("thread", 1000L, "thread1");
-            }
-        });
+        Thread thread1 = new Thread(() -> task("thread", 1000L, "thread1"));
 
-        Thread thread2 = new Thread(new Runnable() {
-            public void run() {
-                task("thread", 2000L, "thread2");
-            }
-        });
+        Thread thread2 = new Thread(() -> task("thread", 2000L, "thread2"));
 
 
         try {
@@ -59,17 +51,9 @@ public class AgentRedisUtilsTest extends AbstractTestNGSpringContextTests {
     public void testDiffKey() {
         Assert.notNull(this.agentRedisUtils, "redisUtils 为空");
 
-        Thread thread1 = new Thread(new Runnable() {
-            public void run() {
-                task("thread1", 1000L, "thread1");
-            }
-        });
+        Thread thread1 = new Thread(() -> task("thread1", 1000L, "thread1"));
 
-        Thread thread2 = new Thread(new Runnable() {
-            public void run() {
-                task("thread2", 2000L, "thread2");
-            }
-        });
+        Thread thread2 = new Thread(() -> task("thread2", 2000L, "thread2"));
 
 
         try {
