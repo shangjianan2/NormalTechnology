@@ -46,8 +46,8 @@ public class AgentRedisUtils implements InitializingBean {
      */
     @PostConstruct
     public void initUniqueSha() {
-        logger.info("redis ip: {}", jedisIp);
-        this.jedis = new Jedis(jedisIp);
+        logger.info("redis ip: {}", "127.0.0.1");
+        this.jedis = new Jedis("127.0.0.1");
         logger.info("连接成功");
         logger.info("服务正在运行: "+jedis.ping());
 

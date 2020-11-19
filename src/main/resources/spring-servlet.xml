@@ -42,7 +42,11 @@
 
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/**"/>
+            <mvc:mapping path="/display"/>
+            <mvc:mapping path="/a/**"/>
+            <mvc:mapping path="/b/**"/>
+            <mvc:exclude-mapping path="/a/b/**"/>
+            <mvc:exclude-mapping path="/b/a/**"/>
             <bean class="com.ework.upms.server.interceptor.LoginInterceptor" />
         </mvc:interceptor>
     </mvc:interceptors>
