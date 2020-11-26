@@ -1,6 +1,7 @@
 package com.ework.upms.server;
 
 import com.ework.upms.server.circle.CircleA;
+import com.ework.upms.server.circle.CircleC;
 import com.ework.upms.server.constructor.ccc;
 import com.ework.upms.server.i18n.I18nTest;
 import com.ework.upms.server.post.processors.TestProcessor;
@@ -41,11 +42,13 @@ public class BeanFactoryTest {
     @Test
     public void testCircle() {
         BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-servlet-circle.xml"));
-        CircleA circleA = (CircleA)bf.getBean("circleA");
-        circleA.display();
-        circleA.getCircleB().display();
-        circleA.getCircleC().display();
-        System.out.println(circleA);
+//        CircleA circleA = (CircleA)bf.getBean("circleA");
+//        circleA.display();
+//        circleA.getCircleB().display();
+//        circleA.getCircleC().display();
+//        System.out.println(circleA);
+        CircleC circleC = (CircleC)bf.getBean("circleC");
+        System.out.println(circleC);
     }
 
     @Test
