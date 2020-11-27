@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -24,7 +25,7 @@ import java.util.Map;
  * @Created by gongxz
  */
 @Aspect
-@Configuration
+@Component
 public class LoggerAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());

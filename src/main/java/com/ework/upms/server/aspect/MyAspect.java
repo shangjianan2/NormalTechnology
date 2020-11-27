@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyAspect {
 
-    @Around("execution(* com.ework.upms.server.controller.IndexController.hello(..))")
+    @Around("@annotation(com.ework.upms.server.annotation.MyAnnotation)")
     public Object testAround(ProceedingJoinPoint jp) throws Throwable {
         System.out.println("aspect pre");
         Object o = jp.proceed();
