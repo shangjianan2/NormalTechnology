@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class TestTransaction {
 
     @Transactional(transactionManager = "adsTm")
-    @MyAnnotation
     public String helloWorld() {
         return "adsf";
     }
