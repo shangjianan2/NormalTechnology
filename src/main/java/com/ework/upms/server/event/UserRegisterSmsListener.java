@@ -9,8 +9,8 @@ import org.springframework.transaction.event.TransactionalEventListener;
 public class UserRegisterSmsListener{
 
     // 通过注解实现监听器
-    @Async
-    @TransactionalEventListener(UserDTO.class)
+//    @Async
+    @EventListener(UserDTO.class)
     public void handleUserEvent(UserDTO userDTO){
         System.out.println("监听到用户注册，准备发送短信，user:"+userDTO.toString());
     }
