@@ -10,11 +10,11 @@ public class testAspectTest extends AbstractTestNGSpringContextTests {
     @Autowired
     private TestAspect testAspect;
     @Autowired
-    private TestWithoutAspect testWithoutAspect;
+    private TestTransaction testTransaction;
 
     @Test
     public void test() {
         testAspect.helloWorld();
-        testWithoutAspect.helloWorld();
+        testTransaction.helloWorld();
     }
 }
